@@ -1,0 +1,98 @@
+@import './styles/mixins';
+
+header {
+	background: var(--black);
+	height: 9rem;
+	width: 100%;
+
+	@include flex-center;
+
+	& > div {
+		width: 85%;
+		@include flex-center;
+
+		& > *:not(:last-child) {
+			margin-right: 2rem;
+		}
+	}
+
+	svg {
+		width: 50px;
+		height: 50px;
+
+		path {
+			width: 100%;
+			height: 100%;
+			fill: white;
+		}
+
+		&:hover {
+			path {
+				fill: grey;
+			}
+		}
+	}
+}
+
+.main-box {
+	@include flex-center-col;
+	justify-content: flex-start;
+	width: 95%;
+	margin-top: 1rem;
+	border: var(--black) solid 1px;
+	border-radius: 3px;
+	padding: 1.5rem;
+	background: var(--grey);
+	box-shadow: 3px 1px 40px 10px rgba(0, 0, 0, 0.16);
+
+	& > div:first-child {
+		p {
+			margin-bottom: 1.5rem;
+		}
+	}
+
+	main {
+		width: 100%;
+
+		ol {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			counter-reset: span;
+
+			& > li {
+				counter-increment: span 1;
+
+				span::before {
+					content: counter(span) ')';
+				}
+			}
+
+			li,
+			span {
+				transition: all 0.3s;
+			}
+
+			li {
+				width: fit-content;
+				margin-left: 1.5rem;
+				padding: 3px 19px;
+				border-radius: 19px;
+
+				&:hover {
+					background: black;
+
+					span {
+						color: white;
+					}
+
+					a,
+					a:link,
+					a:visited {
+						color: dodgerblue;
+					}
+				}
+			}
+		}
+	}
+}

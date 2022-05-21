@@ -1,0 +1,31 @@
+@import './mixins';
+
+:root {
+	--offwhite: #fdf7fb;
+	--grey: #f0e8ed;
+	--black: #181618;
+}
+
+body {
+	background: var(--offwhite);
+	font-size: 1.2rem;
+	font-family: 'Mukta', sans-serif;
+	color: var(--black);
+	padding-bottom: 2rem;
+
+	@include flex-center-col;
+
+	& > div {
+		@include flex-center-col;
+	}
+}
+
+a:link,
+a:visited,
+a {
+	transition: color 0.4s;
+
+	&:hover {
+		color: midnightblue;
+	}
+}
