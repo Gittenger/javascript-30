@@ -5,7 +5,8 @@
 	"main": "index.js",
 	"homepage": "https://gittenger.github.io/javascript-30",
 	"scripts": {
-		"deploy": "gh-pages"
+		"start": "NODE_ENV=development concurrently gulp live-server",
+		"build": "NODE_ENV=production gulp"
 	},
 	"repository": {
 		"type": "git",
@@ -20,17 +21,18 @@
 	"devDependencies": {
 		"autoprefixer": "^10.4.7",
 		"browser-sync": "^2.12.5 <2.23.2",
+		"concurrently": "^7.2.0",
 		"cssnano": "^5.1.9",
 		"del": "^6.1.0",
 		"gulp": "^4.0.2",
+		"gulp-mode": "^1.1.0",
 		"gulp-postcss": "^9.0.1",
 		"gulp-sass": "^5.1.0",
+		"live-server": "^1.2.2",
 		"postcss": "^8.4.14",
 		"sass": "^1.52.1"
 	},
 	"browserslist": [
-		"last 1 chrome version",
-		"last 1 firefox version",
-		"last 1 safari version"
+		"defaults"
 	]
 }
